@@ -3,8 +3,8 @@ import json
 d = {}
 d1 = {}
 c = set()
-# b = '[{"name": "B", "parents": ["A", "C"]}, {"name": "C", "parents": ["A"]}, {"name": "A", "parents": []}, {"name": "D", "parents":["C", "F"]}, {"name": "E", "parents":["D"]}, {"name": "F", "parents":[]}]'
-a1234 = '[{"name": "A", "parents": []}, {"name": "B", "parents": ["A", "C"]}, {"name": "C", "parents": ["A"]}]'
+b = '[{"name": "B", "parents": ["A", "C"]}, {"name": "C", "parents": ["A"]}, {"name": "A", "parents": []}, {"name": "D", "parents":["C", "F"]}, {"name": "E", "parents":["D"]}, {"name": "F", "parents":[]}]'
+a = '[{"name": "A", "parents": []}, {"name": "B", "parents": ["A", "C"]}, {"name": "C", "parents": ["A"]}]'
 # di = '[{"name": "A", "parents": ["B", "C", "D"]},{"name": "E", "parents": ["F", "G"]},' \
 #      '{"name": "I", "parents": ["E", "F", "Y", "D", "G"]},{"name": "B", "parents": ["I", "Y", "D", "G"]},' \
 #      '{"name": "F", "parents": ["D", "Z"]},{"name": "C", "parents": ["Y", "G", "Z"]},{"name": "Y", "parents": []},' \
@@ -15,28 +15,19 @@ strings = '[{"name": "dfgre", "parents": ["gsdfgre"]},' \
           ' {"name": "gsdfgre", "parents": []}] '
 
 
-def predok(mass):
-    for i in mass:
-        d1[i] = d1.get(i, 0) + 1
-        if i not in c:
-            predok(d[i])
-            c.add(i)
+def predok(m, mass):
+    pass
 
 
-reada = json.loads(strings)
+
+reada = json.loads(b)
 print(reada)
 for i in reada:
     d[i['name']] = i['parents']
 print(d)
-for i in d:
-    if i not in c:
-        predok(d[i])
-        c.add(i)
-    d1[i] = d1.get(i, 0) + 1
-# for i in d:
-#     if d[i]:
-#         d1[i] = d1.get(i, 0) + 1
-#         predok(d[i], d1)
+for num, i in enumerate(d):
+    d1[i] = d1.get(i, 0)+1
+
 for i, num in sorted(d1.items()):
     print(i, ":", num)
 # A : 5
