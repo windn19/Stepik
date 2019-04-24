@@ -10,6 +10,7 @@ par = {
 atr=[]
 res = requests.post(url=urlAPI, data=par)
 token = res.json()['token']
+print(res)
 with open('input.txt', 'r', encoding='utf-8') as f:
     for arts in f:
         header = {'X-Xapp-Token': token}
