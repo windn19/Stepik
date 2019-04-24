@@ -17,4 +17,5 @@ data = res.json()
 print()
 print(data['main']['temp'])
 temp = data['main']['temp']
-print(f'current temperature in {city} is {temp}')
+descrip = data['weather'][0]['description']
+print(f'current temperature in {city} is {temp}\u2103 {descrip.capitalize()}')
