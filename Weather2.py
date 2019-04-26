@@ -1,10 +1,17 @@
 import requests
 
-urls = ['http://wttr.in/london?nTqu&lang=en',
-       'http://wttr.in/Шереметьево?nTqu&lang=ru',
-       'http://wttr.in/Череповец?nTqu&lang=ru']
+urls = ['http://wttr.in/london',
+       'http://wttr.in/Первоуральск',
+       'http://wttr.in/Череповец']
+
+par = {
+    'nTqu': '',
+    'lang': 'en'
+}
 
 for url in urls:
-    res = requests.get(url)
+    par['lang'] = 'en' if ord(url[-1]) < 127 else 'ru'
+    res = requests.get(url, params=par)
     res.encoding = 'utf-8'
+    print(res.url)
     print(res.text)
