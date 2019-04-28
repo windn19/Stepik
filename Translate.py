@@ -12,7 +12,7 @@ header = {'Authorization': f'Bearer {token.text}'}
 urlAPI = 'https://developers.lingvolive.com/api/v1/Translation'
 
 par = {
-    'text': 'Myth',
+    'text': 'ally',
     'srcLang': 1033,
     'dstLang': 1049,
     'isCaseSensitive': True
