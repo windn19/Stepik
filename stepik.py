@@ -24,7 +24,7 @@ def predok(mass):
             c.add(i)
 
 
-reada = json.loads(b)
+reada = json.loads(a)
 print(reada)
 for i in reada:
     d[i['name']] = i['parents']
