@@ -7,7 +7,7 @@ par = {
     'client_id': id_code,
     'client_secret': id_secret
 }
-atr=[]
+atr = []
 res = requests.post(url=urlAPI, data=par)
 token = res.json()['token']
 print(res)
