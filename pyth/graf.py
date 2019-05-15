@@ -1,5 +1,4 @@
-import tkinter
-
+from tkinter import *
 root = Tk()
 btk = Button(root, text='Кнопочка', width=10, height=2,
              bg='white', fg='black', font='Arial 14')
