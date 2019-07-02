@@ -53,9 +53,10 @@ woman1.act()
 man1.act()
 man2 = Man('seed')
 food = 10
-for i in [10, 1, 3, 4]:
-    man2.x += i
-    print(man2.x)
-    print(man2.food)
-    print()
+if __name__ == '__main__':
+    for i in [10, 1, 3, 4]:
+        man2.x += i
+        print(man2.x)
+        print(man2.food)
+        print()
 
