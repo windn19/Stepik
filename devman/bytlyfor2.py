@@ -66,7 +66,7 @@ head = {
 }
 
 if __name__ == '__main__':
-    logging.basicConfig(level='INFO')
+    logging.basicConfig(filename='main.log', level='INFO')
     try:
         print(link)
         bitlink = urlparse(link)[1] + urlparse(link)[2]

@@ -1,0 +1,28 @@
+from random import randint
+
+
+def bynar(top, end, v):
+    index = (top+end)//2
+    if v == a[index]:
+        return index
+    if v > a[index]:
+        if index == end-1:
+            return end
+        else:
+            return bynar(index, end, v)
+    else:
+        return bynar(top, index, v)
+
+
+b = set()
+a = []
+for _ in range(10):
+    i = randint(0, 100)
+    while i in a:
+        i = randint(0, 100)
+    a.append(i)
+a.sort()
+print(a)
+v = int(input())
+result = bynar(0, len(a)-1, v)
+print(result)
